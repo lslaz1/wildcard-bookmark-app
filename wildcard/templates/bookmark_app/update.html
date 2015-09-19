@@ -1,0 +1,34 @@
+{% extends 'bookmark_app/base.html' %}
+
+{% block content %}
+
+<div id='url'>
+	<h3>Update URL Here</h3>
+</div>
+	<div id='url-update'>
+		<div class='row'>
+			<div class='col-md-8 col-md-offset-2'>
+				<form action='/bookmark/{{id}}/update_url' method='post'>
+					<input type='text' name='url' value={{url}}><br>
+					<button>Update URL</button>
+				{% csrf_token %}
+				</form>
+			</div>	
+		</div>
+	</div>
+<div id='description'>
+	<h3>Update Description Here</h3>
+</div>
+	<div id='desc-update'>
+		<div class='row'>
+			<div class='col-md-8 col-md-offset-2'>
+				<form action='/bookmark/{{id}}/update_desc' method='post'>
+					<input type='text' name='description'><br>
+					<button>Update Description</button>
+				{% csrf_token %}
+				</form>
+			</div>	
+		</div>
+	</div>
+
+{% endblock %}

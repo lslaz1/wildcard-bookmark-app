@@ -1,0 +1,16 @@
+{% extends 'bookmark_app/base.html' %}
+
+{% block content %}
+
+	<h2>Saved Bookmarks:<h2>
+
+	{% for x in bookmarks %}
+
+		<a href='http://{{x.URL}}' target='_blank'>{{x.URL}}</a>
+		<p>{{x.Description}}</p>
+		<button><a href='/bookmark/{{x.id}}/update'>Update Bookmark</a></button><br>
+		<button><a href='/bookmark/{{x.id}}/remove'>Remove Bookmark</a></button><br>
+
+	{% endfor %}
+
+{% endblock %}
