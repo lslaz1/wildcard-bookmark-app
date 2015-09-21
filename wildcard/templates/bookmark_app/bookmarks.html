@@ -6,11 +6,12 @@
 
 	{% for x in bookmarks %}
 
-		<a href='http://{{x.URL}}' target='_blank'>{{x.URL}}</a>
-		<p>{{x.Description}}</p>
-		<button><a href='/bookmark/{{x.id}}/update'>Update Bookmark</a></button><br>
-		<button><a href='/bookmark/{{x.id}}/remove'>Remove Bookmark</a></button><br>
+	<a href='http://{{x.URL}}' target='_blank'>{{x.URL}}</a>
+	<p>{{x.Description}}</p>
+	<button><a href='/bookmark/{{x.id}}/update'>Update Bookmark</a></button><br>
+	<button><a href='/bookmark/{{x.id}}/remove'>Remove Bookmark</a></button><br>
 
 	{% endfor %}
 
+	
 {% endblock %}

@@ -10,7 +10,7 @@
 			<div class='col-md-8 col-md-offset-2'>
 				<form action='/bookmark/{{id}}/update_url' method='post'>
 					<input type='text' name='url' value={{url}}><br>
-					<button>Update URL</button>
+					<input type='submit' value='Update URL'>
 				{% csrf_token %}
 				</form>
 			</div>	
@@ -24,7 +24,7 @@
 			<div class='col-md-8 col-md-offset-2'>
 				<form action='/bookmark/{{id}}/update_desc' method='post'>
 					<input type='text' name='description'><br>
-					<button>Update Description</button>
+					<input type='submit' value='Update Description'>
 				{% csrf_token %}
 				</form>
 			</div>	

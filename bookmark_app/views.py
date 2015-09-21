@@ -11,6 +11,11 @@ def bookmarks(request):
 	# displays list of urls:description
 	#retrieves all bm in db
 	bookmarks = Bookmark.objects.all()
+	# if user searchs URL or description, execute this
+	if request.GET.get('search'):
+		search = request.GET.get('search')
+		bookmarks = Bookmark.objects.filter(Q(URL__icontains=search) | Q(Description__icontains=search))
+
 	return render(request, 'bookmark_app/bookmarks.html', {'bookmarks':bookmarks})
 
 def new(request):

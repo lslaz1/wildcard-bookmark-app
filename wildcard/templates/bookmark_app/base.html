@@ -4,10 +4,28 @@
 	<head>
 		<meta http-equiv='X-UA-Compatible' content='IE-edge'>
 		<meta name='viewport' content='width=device-width'>
+		<meta name="description" content="Wilcard Corp Bookmark App">
+		<meta name="author" content="Lindsay Slazakowski">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<title>Bookmark App</title>
+		<script>
+			$(document).ready(function() {
+				$('#url-update').hide()
+				$('#desc-update').hide()
+
+				$('#url').click(function() {
+					$('#url-update').slideDown();
+				});
+			});
+			$(document).ready(function() {
+				$('#description').click(function() {
+					$('#desc-update').slideDown();
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div class='container-fluid'>
@@ -17,6 +35,10 @@
 				</div>
 			</div>
 		</div>
+		<form action='/bookmarks' method='get'>
+			<input type='text' name='search'>
+			<input type='submit' value='Search'>
+		</form>	
 		{% block content %}{% endblock %}
 	</body>
 </html>
